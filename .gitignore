@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.pytest_cache/
+
+# Node
+node_modules/
+dist/
+.vite/
+
+# Environment secrets
+.env
+.env.*
+!.env.example
+
+# Uploads and generated files
+uploads/
+*.log
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Databases and logs
+*.db
+*.sqlite
+*.sqlite3
+*.log
+*.tsbuildinfo
+
+# Databases and logs
+*.db
+*.sqlite
+*.sqlite3
+*.log
+*.tsbuildinfo

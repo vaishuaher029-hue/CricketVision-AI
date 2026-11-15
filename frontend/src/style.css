@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+/* Palette carried over from the original CricketVision AI stylesheet. */
+@theme {
+  --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --color-navy-950: #071426;
+  --color-navy-900: #091a2d;
+  --color-navy-800: #0d2037;
+  --color-navy-700: #123451;
+  --color-navy-600: #1d3855;
+  --color-navy-500: #294765;
+
+  --color-brand-300: #8bf0f7;
+  --color-brand-400: #5ee2ef;
+  --color-brand-500: #19b6c4;
+  --color-brand-600: #1678bd;
+
+  --color-ink: #eaf2ff;
+  --color-ink-soft: #b6c9dc;
+  --color-mute: #91a8c2;
+  --color-mute-2: #7892ad;
+
+  --color-ok: #65dfb2;
+  --color-warn: #fab219;
+  --color-bad: #ff9292;
+
+  /* Chart series (dataviz palette, dark-surface steps) */
+  --color-series-1: #3987e5;
+  --color-series-2: #d95926;
+  --color-series-3: #199e70;
+
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-float-slow: float 8s ease-in-out infinite;
+  --animate-fade-up: fade-up 0.6s ease-out both;
+  --animate-scan: scan 2.4s ease-in-out infinite;
+  --animate-indeterminate: indeterminate 1.4s ease-in-out infinite;
+
+  @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+  @keyframes fade-up { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+  @keyframes scan { 0%, 100% { opacity: 0.35; } 50% { opacity: 1; } }
+  @keyframes indeterminate { 0% { transform: translateX(-100%); } 100% { transform: translateX(260%); } }
+}
+
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--color-navy-950); color: var(--color-ink); font-family: var(--font-sans); font-synthesis: none; -webkit-font-smoothing: antialiased; }
+::selection { background: #19b6c466; }
+:focus-visible { outline: 2px solid var(--color-brand-400); outline-offset: 2px; }
+
+.bg-hero { background: radial-gradient(circle at 50% 0%, #12345a 0, #071426 55%); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition-duration: 0.01ms !important; }
+}
+html[data-motion="off"] *, html[data-motion="off"] *::before, html[data-motion="off"] *::after { animation: none !important; transition: none !important; }
